@@ -24,12 +24,23 @@ JUnit4, Robolectric，Mockito，AssertJ，Gson
 如果你不懂什么叫unit test，额。。。  
 如果你不懂JUnit的使用，额。。。  
 如果你不懂Mockito的使用，请看[这里](http://www.vogella.com/tutorials/Mockito/article.html)  
-如果你不懂Robolectric的使用，请看[这里](http://mitx.mobile.mogujie.org/topic/191/%E7%94%A8robolectric-%E5%9C%A8local-jvm%E4%B8%8A%E8%B7%91android-unit-test)
+如果你不懂Robolectric的使用，请看[这里](http://mitx.mobile.mogujie.org/topic/191/%E7%94%A8robolectric-%E5%9C%A8local-jvm%E4%B8%8A%E8%B7%91android-unit-test)  
 
 
 ## 怎么样使用？
 目前你可以使用http://jitpack.io/来引入这个项目
-   
+
+```
+allprojects {
+    repositories {
+        maven { url "https://jitpack.io" }
+    }
+}
+
+dependencies {
+    compile 'com.github.mogujie:natasha:v0.1.0'
+}
+```   
 ## 一些小例子
 
 ```java
