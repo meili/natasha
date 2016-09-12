@@ -1,0 +1,37 @@
+apply plugin: 'com.android.library'
+
+android {
+    useLibrary 'org.apache.http.legacy'
+    compileSdkVersion 23
+    buildToolsVersion "23.0.2"
+
+    defaultConfig {
+        minSdkVersion 15
+        targetSdkVersion 23
+        versionCode 1
+        versionName "1.0"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+repositories {
+    maven { url "https://jitpack.io" }
+    jcenter()
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'com.android.support:support-annotations:23.0.0'
+
+    compile 'junit:junit:4.12'
+    compile 'org.robolectric:robolectric:3.0'
+    compile 'org.robolectric:shadows-support-v4:3.0'
+    compile "org.mockito:mockito-core:1.10.19"
+    compile 'com.google.code.gson:gson:2.4'
+    compile 'org.assertj:assertj-core:2.3.0'
+}

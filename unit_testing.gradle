@@ -1,0 +1,39 @@
+repositories {
+    jcenter()
+}
+
+//这个是用来代码覆盖率统计的
+apply plugin: 'jacoco'
+
+jacoco {
+    toolVersion = "0.7.1.201405082137"
+}
+
+task jacocoTestReport(type: JacocoReport, dependsOn: "testDebugUnitTest") {
+    group = "Reporting"
+    description = "Generate Jacoco coverage reports"
+
+    //1. 这里是一些不需要统计的类，比如说自动生成的一些类，可以根据需要，在这里添加
+    def excludedSources = ['**/R.class',
+                           '**/R$*.class',
+                           '**/BuildConfig.*',
+                           '**/*$ViewInjector*.*',
+                           '**/*MembersInjector.*',
+                           '**/dagger/*',
+                           '**/Manifest*.*']
+
+    classDirectories = fileTree(
+            dir: 'build/intermediates/classes/debug',
+            excludes: excludedSources
+    )
+
+    sourceDirectories = files(['src/main/java'])
+
+    executionData = files('build/jacoco/testDebugUnitTest.exec')
+
+    reports {
+        xml.enabled = true
+        html.enabled = true
+    }
+
+}
