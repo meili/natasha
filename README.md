@@ -31,7 +31,7 @@ JUnit4, Robolectric，Mockito，AssertJ，Gson
 ## 怎么样使用？
 目前你可以使用http://jitpack.io/来引入这个项目
 
-```
+```groovy
 allprojects {
     repositories {
         maven { url "https://jitpack.io" }
