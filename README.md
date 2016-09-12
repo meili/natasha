@@ -21,10 +21,11 @@ af()   =>   Assert.assertFalse()
 
 ## 这个project用到那些框架/技术？
 JUnit4, Robolectric，Mockito，AssertJ，Gson  
-如果你不懂什么叫unit test，额。。。  
-如果你不懂JUnit的使用，额。。。  
-如果你不懂Mockito的使用，请看[这里](http://www.vogella.com/tutorials/Mockito/article.html)  
-如果你不懂Robolectric的使用，请看[这里](http://mitx.mobile.mogujie.org/topic/191/%E7%94%A8robolectric-%E5%9C%A8local-jvm%E4%B8%8A%E8%B7%91android-unit-test)  
+如果你不懂什么叫unit test，请看[这里](http://chriszou.com/2016/04/13/android-unit-testing-start-from-what.html)  
+如果你不懂JUnit的使用，请看[这里](http://chriszou.com/2016/04/18/android-unit-testing-junit.html)   
+如果你不懂Mockito的使用，请看[这里](http://chriszou.com/2016/04/29/android-unit-testing-mockito.html)  
+如果你不懂Robolectric的使用，请看[这里](http://chriszou.com/2016/06/05/robolectric-android-on-jvm.html)  
+有任何单元测试的问题，请看[这里](http://chriszou.com/) 
 
 
 ## 怎么样使用？
