@@ -16,6 +16,7 @@ import org.mockito.junit.MockitoRule;
 import java.io.IOException;
 import java.io.InputStream;
 import java.util.concurrent.CountDownLatch;
+import java.util.concurrent.TimeUnit;
 
 import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -191,6 +192,10 @@ public class TestBase extends Mockito {
 
     public void await() throws InterruptedException {
         latch.await();
+    }
+
+    public boolean await(long timeout, TimeUnit unit) throws InterruptedException {
+        return latch.await(timeout, unit);
     }
 
     public void countDown() {
