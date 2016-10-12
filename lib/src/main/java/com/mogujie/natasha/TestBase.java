@@ -15,6 +15,7 @@ import org.mockito.junit.MockitoRule;
 
 import java.io.IOException;
 import java.io.InputStream;
+import java.util.concurrent.CountDownLatch;
 
 import static junit.framework.Assert.assertEquals;
 import static org.junit.Assert.assertNotNull;
@@ -34,6 +35,8 @@ public class TestBase extends Mockito {
 
     @Rule
     public JSpecRule jSpecRule = new JSpecRule();
+
+    public CountDownLatch latch = new CountDownLatch(1);
 
     /**
      * Short for assertEquals
@@ -171,7 +174,7 @@ public class TestBase extends Mockito {
         return json2Data(readResource(resourceName), clazz);
     }
 
-    private String readResource(String resourceName) {
+    public String readResource(String resourceName) {
         try {
             InputStream is = this.getClass().getClassLoader().getResourceAsStream(resourceName);
             byte[] bytes = new byte[is.available()];
@@ -180,6 +183,18 @@ public class TestBase extends Mockito {
         } catch (IOException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public void resetLatch(int count) {
+        latch = new CountDownLatch(count);
+    }
+
+    public void await() throws InterruptedException {
+        latch.await();
+    }
+
+    public void countDown() {
+        latch.countDown();
     }
 
     /**
