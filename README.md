@@ -39,7 +39,7 @@ allprojects {
 }
 
 dependencies {
-    compile 'com.github.mogujie:natasha:v0.1.0'
+    compile 'com.github.mogujie:natasha:v0.1.1'
 }
 ```   
 ## 一些小例子
